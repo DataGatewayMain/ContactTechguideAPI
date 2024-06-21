@@ -19,23 +19,34 @@ app.post('/contact', (req, res) => {
 
     // Validation: You might want to add more validation here
 
-    // Create a transporter
     const transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        host: 'smtppro.zoho.in',
+        port: 465,
+        secure: true, // use SSL
         auth: {
-            user: 'vectoronenine4@gmail.com',
-            pass: 'awuo aagx bavf exap'
+          user: 'noreply@datagateway.in',
+          pass: 'Apple7620@'
         }
-    });
+      });
+
+    // Create a transporter
+    
+    // const transporter = nodemailer.createTransport({
+    //     service: 'Gmail',
+    //     auth: {
+    //         user: 'vectoronenine4@gmail.com',
+    //         pass: 'awuo aagx bavf exap'
+    //     }
+    // });
 
     // Define email options
+
     const mailOptions = {
-        from: email,
-        to: 'vectoronenine4@gmail.com',
+        from: 'noreply@datagateway.in',
+        to: 'psannake13@gmail.com',
         subject: 'New Contact Form Submission',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
-
 
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
@@ -50,8 +61,8 @@ app.post('/contact', (req, res) => {
 });
 
 
-
 // Start the server
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
