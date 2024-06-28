@@ -43,8 +43,8 @@ app.post('/contact', (req, res) => {
 
     const mailOptions = {
         from: 'noreply@datagateway.in',
-        to: 'psannake13@gmail.com',
-        subject: 'New Contact Form Submission',
+        to: 'info@datagateway.in',
+        subject: 'Contact Form Submission from Technical Guide.',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
